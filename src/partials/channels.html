@@ -42,7 +42,9 @@
 				<div class="channel-stream">
 					<div ng-if="channel.stream" class="channel-stream-online">
 						<div class="channel-stream-thumbnail">
-							<img ng-src="{{ channel.stream.preview.small}}" />
+							<a ng-href="{{ channel.url }}">
+								<img ng-src="{{ channel.stream.preview.small }}" />
+							</a>
 						</div>
 
 						<h5>
