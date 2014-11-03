@@ -47,15 +47,17 @@
 							</a>
 						</div>
 
-						<h5>
-							Online<br />
-							<small>
-								since {{ channel.stream.created_at | date }}
-							</small>
-						</h5>
+						<div class="channel-stream-info">
+							<h5>
+								Online<br />
+								<small>
+									since {{ channel.stream.created_at | date }}
+								</small>
+							</h5>
 
-						<div ng-if="channel.stream.game" class="channel-stream-game">
-							Playing {{ channel.stream.game }}
+							<div ng-if="channel.stream.game" class="channel-stream-game">
+								Playing {{ channel.stream.game }}
+							</div>
 						</div>
 					</div>
 
