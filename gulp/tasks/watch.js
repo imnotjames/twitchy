@@ -5,7 +5,7 @@ var config = require('../config');
 gulp.task(
 	'watch',
 	function() {
-		gulp.watch(
+		return gulp.watch(
 			[
 				config.src + '/index.html',
 

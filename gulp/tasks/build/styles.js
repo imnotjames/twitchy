@@ -9,7 +9,7 @@ gulp.task(
 	'build:styles',
 	[ 'clean' ],
 	function () {
-		gulp.src([ config.src + '/*.scss', '!' + config.src + '/**/_*.scss' ])
+		return gulp.src([ config.src + '/*.scss', '!' + config.src + '/**/_*.scss' ])
 			.pipe(plumber())
 			// .pipe(sourcemaps.init())
 			.pipe(sass())

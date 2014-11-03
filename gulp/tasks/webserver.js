@@ -6,7 +6,7 @@ var config = require('../config');
 gulp.task(
 	'webserver',
 	function() {
-		gulp.src(config.webserver.root)
+		return gulp.src(config.webserver.root)
 			.pipe(
 				webserver({
 					host: config.webserver.host,

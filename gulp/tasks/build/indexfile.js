@@ -6,7 +6,7 @@ gulp.task(
 	'build:indexfile',
 	[ 'clean' ],
 	function() {
-		gulp.src(config.src + '/index.html')
+		return gulp.src(config.src + '/index.html')
 			.pipe(gulp.dest(config.dest));
 	}
 );

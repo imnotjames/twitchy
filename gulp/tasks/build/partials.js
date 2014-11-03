@@ -6,7 +6,7 @@ gulp.task(
 	'build:partials',
 	[ 'clean' ],
 	function() {
-		gulp.src(config.src + '/**/*.html')
+		return gulp.src(config.src + '/**/*.html')
 			.pipe(gulp.dest(config.dest + '/'));
 	}
 );

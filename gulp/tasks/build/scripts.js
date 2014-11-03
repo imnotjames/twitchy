@@ -9,7 +9,7 @@ gulp.task(
 	'build:scripts',
 	[ 'clean' ],
 	function() {
-		gulp.src([ config.src + '/*.js', '!' + config.src + '/**/_*.js' ])
+		return gulp.src([ config.src + '/*.js', '!' + config.src + '/**/_*.js' ])
 			.pipe(plumber())
 			.pipe(gulpBrowserify({ insertGlobals: true }))
 			.pipe(uglify())
