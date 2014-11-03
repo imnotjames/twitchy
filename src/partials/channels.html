@@ -21,7 +21,9 @@
 						<span class="label label-danger">Mature</span>
 					</span>
 					<span class="channel-name">
-						{{ channel.display_name }}
+						<a ng-href="{{ channel.url }}">
+							{{ channel.display_name }}
+						</a>
 					</span>
 					<span class="channel-last-update">
 						{{ channel.updated_at | date }}

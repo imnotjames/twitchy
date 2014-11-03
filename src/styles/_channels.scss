@@ -88,6 +88,10 @@
 
 					position: relative;
 
+					a, a:hover, a:active {
+						color: $gray-light;
+					}
+
 					.channel-name::after {
 						content:"\2014";
 					}
