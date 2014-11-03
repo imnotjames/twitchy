@@ -1,0 +1,137 @@
+.channels {
+	$channel-height: 200px;
+
+	margin-top: 2em;
+
+	.channels-empty {
+		// empty channel message
+		text-align: center;
+		font-size: $font-size-h2;
+		font-weight: bold;
+
+		color: $gray-light;
+
+		opacity: 0.3;
+
+		line-height: $channel-height * 2;
+	}
+
+	.channel-row {
+		@import 'animations/ngrepeat';;
+
+		.channel-data {
+			height: $channel-height;
+
+			.channel-logo {
+				width: $channel-height;
+				height: $channel-height - 2px;
+
+				overflow: hidden;
+
+				float: left;
+
+				border-radius: $panel-border-radius 0 0 $panel-border-radius;
+
+				background-image: url('//static-cdn.jtvnw.net/jtv_user_pictures/xarth/404_user_150x150.png');
+				background-size: 100% 100%;
+				background-repeat: no-repeat;
+
+				.thumbnail {
+					margin-bottom: 0;
+					padding: 0;
+					border: 0px;
+				}
+			}
+
+			.channel-body {
+				height: $channel-height;
+
+				margin-left: $channel-height;
+
+				position: relative;
+
+				.channel-stream {
+					.channel-stream-offline {
+						font-weight: bold;
+						text-align: center;
+
+						font-size: $font-size-h2;
+
+						line-height: $channel-height * 0.45;
+
+						color: $gray-lighter;
+
+						text-transform: lowercase;
+
+						cursor: default
+					}
+
+					.channel-stream-online {
+						.channel-stream-thumbnail {
+							max-height: 100%;
+
+							float: right;
+						}
+					}
+				}
+
+				.channel-meta, .channel-title, .channel-stats {
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+				}
+
+				.channel-meta {
+					font-size: ceil(($font-size-base * 0.7));
+					color: $gray-light;
+					margin-bottom: 0.5em;
+
+					position: relative;
+
+					.channel-name::after {
+						content:"\2014";
+					}
+
+					.channel-mature {
+						text-transform: uppercase;
+
+						float: right;
+
+						.label {
+							display: inline-block;
+						}
+					}
+				}
+
+				.channel-title {
+					font-weight: bold;
+					margin-bottom: 0.5em;
+				}
+
+				.channel-stats {
+					position: absolute;
+					bottom: $panel-body-padding;
+					right: $panel-body-padding;
+
+					font-size: ceil(($font-size-base * 0.7));
+					color: $gray-light;
+
+					width: 100%;
+
+					text-align: right;
+
+					.channel-stat {
+						&::after {
+							content: ' \2022 ';
+						}
+
+						&:last-child::after {
+							content: '';
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}

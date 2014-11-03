@@ -3,6 +3,7 @@
 var angular = require('angular');
 
 angular.module('TwitchyControllers', [])
+	.controller('ChannelsController', require('./channels'))
 	.controller('HomeController', require('./home'))
 	;
 

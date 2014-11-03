@@ -7,6 +7,13 @@ module.exports = function($routeProvider) {
 				controller: 'HomeController'
 			}
 		)
+		.when(
+			'/channels/:channels*',
+			{
+				templateUrl: 'partials/channels.html',
+				controller: 'ChannelsController'
+			}
+		)
 		.otherwise(
 			{
 				redirectTo: '/'

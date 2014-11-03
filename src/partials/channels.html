@@ -1,0 +1,81 @@
+<div class="row channels channels-count-{{ channels.length }}">
+	<div ng-if="channels.length==0">
+		<div class="channels-empty">
+			No Channels
+		</div>
+	</div>
+
+	<div class="col-sm-12 col-lg-6 channel-row repeat-item" ng-repeat="channel in channels">
+		<div class="panel panel-default channel-data">
+			<a ng-href="{{ channel.url }}">
+				<div class="channel-logo">
+						<div class="thumbnail">
+								<img ng-src="{{ channel.logo }}" ng-alt="{{ channel.display_name }}" />
+						</div>
+				</div>
+			</a>
+
+			<div class="channel-body panel-body">
+				<h4 class="channel-meta panel-title">
+					<span ng-if="channel.mature" class="channel-mature">
+						<span class="label label-danger">Mature</span>
+					</span>
+					<span class="channel-name">
+						{{ channel.display_name }}
+					</span>
+					<span class="channel-last-update">
+						{{ channel.updated_at | date }}
+					</span>
+				</h4>
+
+				<h3 class="channel-title panel-title">
+					<a ng-href="{{ channel.url }}">
+						{{ channel.status }}
+						<span ng-if="!channel.status">
+							&raquo; No Status
+						</span>
+					</a>
+				</h3>
+
+				<div class="channel-stream">
+					<div ng-if="channel.stream" class="channel-stream-online">
+						<div class="channel-stream-thumbnail">
+							<img ng-src="{{ channel.stream.preview.small}}" />
+						</div>
+
+						<h5>
+							Online<br />
+							<small>
+								since {{ channel.stream.created_at | date }}
+							</small>
+						</h5>
+
+						<div ng-if="channel.stream.game" class="channel-stream-game">
+							Playing {{ channel.stream.game }}
+						</div>
+					</div>
+
+					<div ng-if="!channel.stream" class="channel-stream-offline">
+						Offline
+					</div>
+				</div>
+
+				<div class="channel-stats">
+					<span ng-if="channel.stream" class="channel-stat channel-stat-viewers">
+						{{ channel.stream.viewers}}
+						stream viewers
+					</span>
+					<span class="channel-stat channel-stat-views">
+						{{ channel.views }}
+						views
+					</span>
+					<span class="channel-stat channel-stat-followers">
+						{{ channel.followers }}
+						followers
+					</span>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>

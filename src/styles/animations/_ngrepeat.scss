@@ -1,0 +1,39 @@
+$transition-duration: 0.5s;
+
+/*
+&.ng-enter-stagger {
+	-webkit-transition-delay: 100ms;
+	transition-delay: 100ms;
+
+	-webkit-transition-duration:0;
+	transition-duration:0;
+}
+*/
+
+&.ng-enter {
+	-webkit-transition:
+		-webkit-clip-path $transition-duration,
+		clip-path $transition-duration,
+		opacity $transition-duration;
+
+	transition:
+		-webkit-clip-path $transition-duration,
+		clip-path $transition-duration,
+		opacity $transition-duration;
+}
+
+&.ng-enter {
+	// Animation start state
+	opacity: 0.8;
+
+	-webkit-clip-path: circle(24px at 24px 24px);
+	clip-path: circle(24px at 24px 24px);
+
+	&.ng-enter-active, &.ng-move-active {
+		// Animation complete state
+		opacity: 1;
+
+		-webkit-clip-path: circle(200% at 24px 24px);
+		clip-path: circle(200% at 24px 24px);
+	}
+}
