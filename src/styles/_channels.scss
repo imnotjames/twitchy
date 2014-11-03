@@ -51,6 +51,9 @@
 				position: relative;
 
 				.channel-stream {
+					position: relative;
+					height: $channel-height * 0.5;
+
 					.channel-stream-offline {
 						font-weight: bold;
 						text-align: center;
@@ -67,10 +70,19 @@
 					}
 
 					.channel-stream-online {
-						.channel-stream-thumbnail {
-							max-height: 100%;
+						height: 100%;
 
-							float: right;
+						.channel-stream-thumbnail {
+							text-align: right;
+
+							height: 100%;
+
+							overflow: hidden;
+
+							img {
+								max-height: 100%;
+								max-width: 100%;
+							}
 						}
 					}
 				}

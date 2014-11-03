@@ -40,14 +40,8 @@
 				</h3>
 
 				<div class="channel-stream">
-					<div ng-if="channel.stream" class="channel-stream-online">
-						<div class="channel-stream-thumbnail">
-							<a ng-href="{{ channel.url }}">
-								<img ng-src="{{ channel.stream.preview.small }}" />
-							</a>
-						</div>
-
-						<div class="channel-stream-info">
+					<div ng-if="channel.stream" class="channel-stream-online row">
+						<div class="channel-stream-info col-sm-6">
 							<h5>
 								Online<br />
 								<small>
@@ -58,6 +52,11 @@
 							<div ng-if="channel.stream.game" class="channel-stream-game">
 								Playing {{ channel.stream.game }}
 							</div>
+						</div>
+						<div class="channel-stream-thumbnail col-sm-6">
+							<a ng-href="{{ channel.url }}">
+								<img ng-src="{{ channel.stream.preview.medium }}" />
+							</a>
 						</div>
 					</div>
 
