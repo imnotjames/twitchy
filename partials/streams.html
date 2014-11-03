@@ -1,0 +1,8 @@
+<div class="row" ng-repeat="stream in streams">
+	<div class="col-sm-2">
+		<div class="thumbnail">
+			<img ng-src="{{ stream.channel.logo }}" />
+		</div>
+	</div>
+	<pre class="col-sm-12"><code>{{ stream | json }}</code></pre>
+</div>

@@ -1,0 +1,21 @@
+<div class="row" ng-repeat="user in users">
+	<div class="background">
+		{{ users | json }}
+	</div>
+	<div class="col-sm-2">
+		<div class="thumbnail">
+			<img ng-src="{{ user.logo }}" />
+		</div>
+	</div>
+	<div class="col-sm-10">
+		<h3>
+			<a ng-href="{{ user._links.self }}">
+				{{ user.display_name }}
+			</a>
+		</h3>
+
+		<p>
+			{{ user.bio }}
+		</p>
+	</div>
+</div>
