@@ -1,4 +1,5 @@
 // import in the relative path to a node-modules bootstrap sass
 // make sure the sprockets import is first
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
 
 @import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
