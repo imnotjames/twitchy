@@ -3,7 +3,7 @@ module.exports =  [
 	'$routeParams',
 	'$twitch',
 	function ($scope, $routeParams, $twitch) {
-		$scope.channels = [];
+		$scope.channels = {};
 
 		var channels;
 
@@ -28,11 +28,11 @@ module.exports =  [
 						return;
 					}
 
-					var channel_id = $scope.channels.push({}) - 1;
+					$scope.channels[channel] = {};
 
 					for (var key in data) {
 						if (data.hasOwnProperty(key)) {
-							$scope.channels[channel_id][key] = data[key];
+							$scope.channels[channel][key] = data[key];
 						}
 					}
 
@@ -42,7 +42,7 @@ module.exports =  [
 								return;
 							}
 
-							$scope.channels[channel_id].stream = data.stream;
+							$scope.channels[channel].stream = data.stream;
 						});
 				});
 
