@@ -5,7 +5,13 @@ module.exports =  [
 	function ($scope, $routeParams, $twitch) {
 		$scope.channels = [];
 
-		var channels = $routeParams.channels.split('/');
+		var channels;
+
+		if ($routeParams.channels) {
+			channels = $routeParams.channels.split('/');
+		} else {
+			channels = [];
+		}
 
 		// Filter empty strings
 		channels = channels.filter(

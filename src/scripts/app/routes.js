@@ -8,7 +8,7 @@ module.exports = function($routeProvider) {
 			}
 		)
 		.when(
-			'/channels/:channels*',
+			'/channels/:channels*?',
 			{
 				templateUrl: 'partials/channels.html',
 				controller: 'ChannelsController'
